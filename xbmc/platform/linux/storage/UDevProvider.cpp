@@ -11,6 +11,7 @@
 #include "platform/linux/PosixMountProvider.h"
 #include "utils/log.h"
 #include "utils/URIUtils.h"
+#include "ServiceBroker.h"
 
 extern "C" {
 #include <libudev.h>
