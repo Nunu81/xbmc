@@ -260,6 +260,7 @@ bool CUDevProvider::PumpDriveChangeEvents(IStorageEventsCallback *callback)
         if (mountpoint && (optical && strcmp(optical, "1") == 0))
         {
           CLog::Log(LOGNOTICE, "UDev: Changed / Added %s", mountpoint);
+		  CServiceBroker::GetAnnouncementManager()->Announce(ANNOUNCEMENT::Application, "xbmc", "DiscChanged", mountpoint);
           if (callback)
             callback->OnStorageAdded(label, mountpoint);
           changed = true;
